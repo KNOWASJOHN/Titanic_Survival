@@ -1,0 +1,478 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* CSS Loading Test */
+.css-test {
+  background-color: lime !important;
+  border: 5px solid red !important;
+  padding: 20px !important;
+}
+
+/* Custom font definitions */
+@font-face {
+  font-family: "StretchPro";
+  src: url("/fonts/StretchPro.otf?v=1") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mirage-Regular";
+  src: url("/fonts/Mirage Reguler.otf?v=1") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "CreatoDisplay-Thin";
+  src: url("/fonts/CreatoDisplay-Thin.otf?v=1") format("opentype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "CreatoDisplay-ThinItalic";
+  src: url("/fonts/CreatoDisplay-ThinItalic.otf?v=1") format("opentype");
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "CreatoDisplay-Black";
+  src: url("/fonts/CreatoDisplay-Black.otf?v=1") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "CreatoDisplay-BlackItalic";
+  src: url("/fonts/CreatoDisplay-BlackItalic.otf?v=1") format("opentype");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Coolvetica-Regular";
+  src: url("/fonts/Coolvetica Rg.otf?v=1") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Coolvetica-Italic";
+  src: url("/fonts/Coolvetica Rg It.otf?v=1") format("opentype");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Semika";
+  src: url("/fonts/Semika.ttf?v=1") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rotifera-BlackItalic";
+  src: url("/fonts/RotiferaDEMO-BlackItalic-BF67eb4c233bf52.ttf?v=1") format("truetype");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "EloquiaText-ExtraLight";
+  src: url("/fonts/Typekiln - EloquiaText-ExtraLight.otf?v=1") format("opentype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "EloquiaDisplay-ExtraBold";
+  src: url("/fonts/Typekiln - EloquiaDisplay-ExtraBold.otf?v=1") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DotMatrix";
+  src: url("/fonts/DOTMATRI.TTF?v=1") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Airnt";
+  src: url("/fonts/Airnt.otf?v=1") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Airnt-Bold";
+  src: url("/fonts/Airnt-Bold.otf?v=1") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Airnt-Quantum";
+  src: url("/fonts/Airnt-Quantum.otf?v=1") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Aquire";
+  src: url("/fonts/Aquire-BW0ox.otf?v=1") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Aquire-Bold";
+  src: url("/fonts/AquireBold-8Ma60.otf?v=1") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Aquire-Light";
+  src: url("/fonts/AquireLight-YzE0o.otf?v=1") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Round8-Four";
+  src: url("/fonts/round8-four.otf?v=1") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated color tokens to match maritime theme design brief */
+  --background: oklch(0.1 0 0);
+  /* Pure black background */
+  --foreground: oklch(1 0 0);
+  /* Pure white text */
+  --card: oklch(0.15 0 0);
+  /* Very dark gray for cards */
+  --card-foreground: oklch(1 0 0);
+  /* White text for cards */
+  --popover: oklch(0.1 0 0);
+  /* Black for popover backgrounds */
+  --popover-foreground: oklch(1 0 0);
+  /* White text for popovers */
+  --primary: oklch(1 0 0);
+  /* White for primary actions */
+  --primary-foreground: oklch(0.1 0 0);
+  /* Black text on primary */
+  --secondary: oklch(0.2 0 0);
+  /* Dark gray for secondary elements */
+  --secondary-foreground: oklch(1 0 0);
+  /* White text on secondary */
+  --muted: oklch(0.2 0 0);
+  /* Dark gray for muted elements */
+  --muted-foreground: oklch(0.7 0 0);
+  /* Light gray text for muted */
+  --accent: oklch(0.8 0 0);
+  /* Light gray for accents */
+  --accent-foreground: oklch(0.1 0 0);
+  /* Black text on accent */
+  --destructive: oklch(0.7 0 0);
+  /* Light gray for errors */
+  --destructive-foreground: oklch(0.1 0 0);
+  /* Black text on destructive */
+  --border: oklch(0.3 0 0);
+  /* Dark gray border */
+  --input: oklch(0.15 0 0);
+  /* Very dark gray input background */
+  --ring: oklch(1 0 0);
+  /* White focus ring */
+  --chart-1: oklch(1 0 0);
+  /* Black for charts */
+  --chart-2: oklch(0.8 0 0);
+  /* Light gray for charts */
+  --chart-3: oklch(0.6 0 0);
+  /* Medium gray for charts */
+  --chart-4: oklch(0.4 0 0);
+  /* Dark gray for charts */
+  --chart-5: oklch(0.2 0 0);
+  /* Very dark gray for charts */
+  --radius: 0.5rem;
+  /* Rounded corners */
+  --sidebar: oklch(0.1 0 0);
+  /* Black sidebar */
+  --sidebar-foreground: oklch(1 0 0);
+  /* White sidebar text */
+  --sidebar-primary: oklch(0.2 0 0);
+  /* Dark gray sidebar primary */
+  --sidebar-primary-foreground: oklch(1 0 0);
+  /* White sidebar primary text */
+  --sidebar-accent: oklch(0.8 0 0);
+  /* Light gray sidebar accent */
+  --sidebar-accent-foreground: oklch(0.1 0 0);
+  /* Black sidebar accent text */
+  --sidebar-border: oklch(0.3 0 0);
+  /* Dark gray sidebar border */
+  --sidebar-ring: oklch(1 0 0);
+  /* White sidebar focus ring */
+  --font-stretch: "StretchPro", sans-serif;
+  --font-mirage: "Mirage-Regular", sans-serif;
+  --font-creato-thin: "CreatoDisplay-Thin", sans-serif;
+  --font-creato-thin-italic: "CreatoDisplay-ThinItalic", sans-serif;
+  --font-creato-black: "CreatoDisplay-Black", sans-serif;
+  --font-creato-black-italic: "CreatoDisplay-BlackItalic", sans-serif;
+  --font-coolvetica: "Coolvetica-Regular", sans-serif;
+  --font-coolvetica-italic: "Coolvetica-Italic", sans-serif;
+  --font-semika: "Semika", sans-serif;
+  --font-rotifera: "Rotifera-BlackItalic", sans-serif;
+  --font-eloquia-text: "EloquiaText-ExtraLight", sans-serif;
+  --font-eloquia-display: "EloquiaDisplay-ExtraBold", sans-serif;
+  --font-dotmatrix: "DotMatrix", monospace;
+  --font-airnt: "Airnt", sans-serif;
+  --font-airnt-bold: "Airnt-Bold", sans-serif;
+  --font-airnt-quantum: "Airnt-Quantum", sans-serif;
+  --font-aquire: "Aquire", sans-serif;
+  --font-aquire-bold: "Aquire-Bold", sans-serif;
+  --font-aquire-light: "Aquire-Light", sans-serif;
+  --font-round8: "Round8-Four", sans-serif;
+}
+
+.dark {
+  /* Updated dark mode to inverted black and white */
+  --background: oklch(1 0 0);
+  /* Pure white background */
+  --foreground: oklch(0.1 0 0);
+  /* Pure black text */
+  --card: oklch(0.98 0 0);
+  /* Very light gray for cards */
+  --card-foreground: oklch(0.1 0 0);
+  /* Black text for cards */
+  --popover: oklch(1 0 0);
+  /* White for popover backgrounds */
+  --popover-foreground: oklch(0.1 0 0);
+  /* Black text for popovers */
+  --primary: oklch(0.1 0 0);
+  /* Black for primary actions */
+  --primary-foreground: oklch(1 0 0);
+  /* White text on primary */
+  --secondary: oklch(0.9 0 0);
+  /* Light gray for secondary elements */
+  --secondary-foreground: oklch(0.1 0 0);
+  /* Black text on secondary */
+  --muted: oklch(0.95 0 0);
+  /* Very light gray for muted elements */
+  --muted-foreground: oklch(0.4 0 0);
+  /* Dark gray text for muted */
+  --accent: oklch(0.2 0 0);
+  /* Dark gray for accents */
+  --accent-foreground: oklch(1 0 0);
+  /* White text on accent */
+  --destructive: oklch(0.3 0 0);
+  /* Dark gray for errors */
+  --destructive-foreground: oklch(1 0 0);
+  /* White text on destructive */
+  --border: oklch(0.85 0 0);
+  /* Light gray border */
+  --input: oklch(0.98 0 0);
+  /* Very light gray input background */
+  --ring: oklch(0.1 0 0);
+  /* Black focus ring */
+  --chart-1: oklch(0.1 0 0);
+  /* Black for charts */
+  --chart-2: oklch(0.3 0 0);
+  /* Dark gray for charts */
+  --chart-3: oklch(0.5 0 0);
+  /* Medium gray for charts */
+  --chart-4: oklch(0.7 0 0);
+  /* Light gray for charts */
+  --chart-5: oklch(0.9 0 0);
+  /* Very light gray for charts */
+  --sidebar: oklch(1 0 0);
+  /* White sidebar */
+  --sidebar-foreground: oklch(0.1 0 0);
+  /* Black sidebar text */
+  --sidebar-primary: oklch(1 0 0);
+  /* White sidebar primary */
+  --sidebar-primary-foreground: oklch(0.1 0 0);
+  /* Black sidebar primary text */
+  --sidebar-accent: oklch(0.2 0 0);
+  /* Dark gray sidebar accent */
+  --sidebar-accent-foreground: oklch(1 0 0);
+  /* White sidebar accent text */
+  --sidebar-border: oklch(0.85 0 0);
+  /* Light gray sidebar border */
+  --sidebar-ring: oklch(0.3 0 0);
+  /* Dark gray sidebar focus ring */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --font-sans: var(--font-coolvetica);
+  --font-serif: var(--font-stretch);
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Font debugging - force different letter spacing and line heights for all fonts */
+  .font-stretch {
+    font-family: "StretchPro", "Arial Black", sans-serif !important;
+
+  }
+
+  .font-mirage {
+    font-family: "Mirage-Regular", "Times New Roman", serif !important;
+
+  }
+
+  .font-creato-thin {
+    font-family: "CreatoDisplay-Thin", "Arial", sans-serif !important;
+  }
+
+  .font-creato-thin-italic {
+    font-family: "CreatoDisplay-ThinItalic", "Arial", sans-serif !important;
+  }
+
+  .font-creato-black {
+    font-family: "CreatoDisplay-Black", "Arial Black", sans-serif !important;
+
+  }
+
+  .font-creato-black-italic {
+    font-family: "CreatoDisplay-BlackItalic", "Arial Black", sans-serif !important;
+
+  }
+
+  .font-coolvetica {
+    font-family: "Coolvetica-Regular", "Helvetica", sans-serif !important;
+
+  }
+
+  .font-coolvetica-italic {
+    font-family: "Coolvetica-Italic", "Helvetica", sans-serif !important;
+
+  }
+
+  .font-semika {
+    font-family: "Semika", "Georgia", serif !important;
+
+  }
+
+  .font-rotifera {
+    font-family: "Rotifera-BlackItalic", "Impact", sans-serif !important;
+  }
+
+  .font-eloquia-text {
+    font-family: "EloquiaText-ExtraLight", "Arial", sans-serif !important;
+  }
+
+  .font-eloquia-display {
+    font-family: "EloquiaDisplay-ExtraBold", "Impact", sans-serif !important;
+
+  }
+
+  .font-dotmatrix {
+    font-family: "DotMatrix", "Courier New", monospace !important;
+
+  }
+
+  .font-airnt {
+    font-family: "Airnt", "Verdana", sans-serif !important;
+
+  }
+
+  .font-airnt-bold {
+    font-family: "Airnt-Bold", "Arial Black", sans-serif !important;
+
+  }
+
+  .font-airnt-quantum {
+    font-family: "Airnt-Quantum", "Verdana", sans-serif !important;
+
+  }
+
+  .font-aquire {
+    font-family: "Aquire", "Tahoma", sans-serif !important;
+  }
+
+  .font-aquire-bold {
+    font-family: "Aquire-Bold", "Arial Black", sans-serif !important;
+
+  }
+
+  .font-aquire-light {
+    font-family: "Aquire-Light", "Arial", sans-serif !important;
+
+  }
+
+  .font-round8 {
+    font-family: "Round8-Four", "Trebuchet MS", sans-serif !important;
+
+  }
+}
