@@ -1,14 +1,23 @@
 import { TitanicPredictionForm } from "@/components/titanic-prediction-form"
+import VantaBackground from '@/components/VantaBackground'
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background">
-      <main className="container mx-auto px-4 py-8">
-        <div className="max-w-6xl mx-auto space-y-8">
+    <div className="relative min-h-screen font-test overflow-hidden">
+      {/* Background Layer */}
+      <div className="absolute inset-0 -z-10">
+        <VantaBackground />
+      </div>
+
+      {/* Foreground Content */}
+      <main className="container mx-auto px-4 py-8 relative z-10">
+        <div className="max-w-5xl mx-auto space-y-8 bg-black/40 p-8 backdrop-blur-lg border border-black/10 shadow-xl rounded-xl">
           {/* Header Section */}
           <div className="text-center space-y-4">
-            <h1 className="text-4xl text-foreground mb-2 font-airnt-quantum tracking-wide">Titanic Survival Predictor</h1>
-            <p className="text-lg font-aquire-light text-muted-foreground max-w-xl mx-auto">
+            <h1 className="text-4xl text-foreground mb-2 font-airnt-quantum tracking-wide text-shadow-lg">
+              Titanic Survival Predictor
+            </h1>
+            <p className="text-lg font-aquire-light text-white text-muted-foreground max-w-xl mx-auto text-shadow-lg">
               Enter passenger details to predict survival probability on the RMS Titanic using machine learning
             </p>
           </div>

@@ -162,14 +162,14 @@ export function TitanicPredictionForm() {
   
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 opacity-90 backdrop-blur-lg border border-black/10 shadow-xl rounded-xl">
       <Card>
         <CardHeader>
           <CardTitle className="font-aquire-bold text-3xl">Passenger Information</CardTitle>
           <CardDescription className="font-creato-thin tracking-wide text-sm">Enter passenger details and click predict to see survival probability</CardDescription>
         </CardHeader>
         <CardContent>
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6 ">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 font-aquire-light tracking-wide">
               {/* Passenger Class */}
               <div className="space-y-2">
@@ -272,9 +272,9 @@ export function TitanicPredictionForm() {
                     <SelectValue placeholder="Southampton" />
                   </SelectTrigger>
                   <SelectContent className="font-aquire-light tracking-wide">
-                    <SelectItem value="0">Southampton (S)</SelectItem>
-                    <SelectItem value="1">Cherbourg (C)</SelectItem>
-                    <SelectItem value="2">Queenstown (Q)</SelectItem>
+                    <SelectItem value="0">Southampton</SelectItem>
+                    <SelectItem value="1">Cherbourg</SelectItem>
+                    <SelectItem value="2">Queenstown</SelectItem>
                   </SelectContent>
                 </Select>
                 {validationErrors.Embarked && <p className="text-sm text-destructive">{validationErrors.Embarked}</p>}
