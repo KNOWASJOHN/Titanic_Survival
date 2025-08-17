@@ -1,11 +1,13 @@
 import os
 from flask import Flask, request, jsonify
+from flask_cors import CORS  # Import CORS
 import joblib
 
 # Load the trained model
 model = joblib.load("titanic_prediction.pkl")
 
 app = Flask(__name__)
+CORS(app)  # Enable CORS for all routes
 
 @app.route("/")
 def home():
