@@ -281,8 +281,13 @@ export function TitanicPredictionForm() {
               </div>
             </div>
 
-            <div className="flex gap-4 tracking-wide">
-              <Button type="submit" className="flex-1 font-medium font-airnt-bold" disabled={isLoading} size="lg">
+            <div className="flex flex-col sm:flex-row gap-4 tracking-wide">
+              <Button 
+                type="submit" 
+                className="w-full sm:flex-1 font-medium font-airnt-bold text-sm sm:text-base py-6 sm:py-4" 
+                disabled={isLoading} 
+                size="lg"
+              >
                 {isLoading ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -309,7 +314,7 @@ export function TitanicPredictionForm() {
                   setError(null)
                   setValidationErrors({})
                 }}
-                className="px-8 font-aquire-light"
+                className="w-full sm:w-auto px-4 sm:px-8 py-6 sm:py-4 font-aquire-light text-sm sm:text-base"
               >
                 Reset
               </Button>
