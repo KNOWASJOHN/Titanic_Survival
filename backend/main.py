@@ -30,19 +30,18 @@ def predict():
         # Build feature array
         features = [[pclass, sex, age, sibsp, parch, fare, embarked]]
         prediction = model.predict(features)[0]
+        probability = model.predict_proba(features)[0][1]
 
-        if hasattr(model, "predict_proba"):
-            probability = model.predict_proba(features)[0][1]
-        else:
-            probability = None
 
-        return jsonify({"prediction": int(prediction),
-            "probability": (float(probability), 4)})
+        return jsonify({
+            "prediction": int(prediction),
+            "probability": round(float(probability), 4) # <-- CORRECTED LINE
+        })
 
     except Exception as e:
         return jsonify({"error": str(e)}), 400
 
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))  
+    port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
