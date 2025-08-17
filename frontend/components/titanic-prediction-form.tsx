@@ -354,7 +354,7 @@ export function TitanicPredictionForm() {
                     <span className="text-sm font-medium">Confidence:</span>
                     <Badge variant={variant === "destructive" ? "destructive" : "default"}>
                       {result.probability ? 
-                        (result.prediction === 1 ? result.probability * 100 : 100 - result.probability).toFixed(1) 
+                        (result.prediction === 1 ? result.probability : 100 - result.probability).toFixed(1) 
                         : 50.0}%
                     </Badge>
                   </div>
