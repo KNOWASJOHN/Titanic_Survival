@@ -138,14 +138,14 @@ export function TitanicPredictionForm() {
     if (prediction === 1) {
       return {
         title: "Likely to Survive",
-        description: `Based on the passenger information, there is a ${probability ? ((probability)).toFixed(1) : 50.0}% chance of surviving.`,
+        description: `Based on the passenger information, there is a ${probability?.toFixed(1) ?? 50.0}% chance of surviving.`,
         icon: CheckCircle,
         variant: "default" as const,
       }
     } else if(prediction === 0) {
       return {
         title: "Unlikely to Survive",
-        description: `Based on the passenger information, there is a ${probability ? ((100 - probability)).toFixed(1) : 50.0}% chance of not surviving.`,
+        description: `Based on the passenger information, there is a ${probability ? (100 - probability).toFixed(1) : 50.0}% chance of not surviving.`,
         icon: AlertTriangle,
         variant: "destructive" as const,
       }
@@ -352,7 +352,7 @@ export function TitanicPredictionForm() {
 
                   <div className="flex items-center gap-2">
                     <span className="text-sm font-medium">Confidence:</span>
-                    <Badge variant={variant === "destructive" ? "destructive" : "default"}>
+                    <Badge variant={variant === "destructive" ? "destructive" : "default"} className="font-dotmatrix font-bold  text-black">
                       {result.probability ? 
                         (result.prediction === 1 ? result.probability : 100 - result.probability).toFixed(1) 
                         : 50.0}%
