@@ -138,7 +138,7 @@ export function TitanicPredictionForm() {
     if (prediction === 1) {
       return {
         title: "Likely to Survive",
-        description: `Based on the passenger information, there is a ${probability ? ((probability) * 100).toFixed(1) : 50.0}% chance of surviving.`,
+        description: `Based on the passenger information, there is a ${probability ? ((probability)).toFixed(1) : 50.0}% chance of surviving.`,
         icon: CheckCircle,
         variant: "default" as const,
       }
