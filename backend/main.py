@@ -37,7 +37,7 @@ def predict():
             probability = None
 
         return jsonify({"prediction": int(prediction),
-            "probability": round(float(probability), 4) if probability is not None else None})
+            "probability": (float(probability), 4)})
 
     except Exception as e:
         return jsonify({"error": str(e)}), 400
