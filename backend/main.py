@@ -35,7 +35,7 @@ def predict():
 
         return jsonify({
             "prediction": int(prediction),
-            "probability": round(float(probability), 4) # <-- CORRECTED LINE
+            "probability": round(float(probability) * 100, 2)  # % survival chance
         })
 
     except Exception as e:
