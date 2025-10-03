@@ -101,7 +101,7 @@ export function TitanicPredictionForm() {
 
       console.log("[v0] Sending prediction request:", payload)
 
-      const response = await fetch("https://titanicsurvival-production.up.railway.app/predict", {
+      const response = await fetch("https://titanic-survival-v3ei.onrender.com/", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(payload),
